@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Tela Login</title>
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="login-box">
+            <h1>Login</h1>
+            <img src="/images/icon-criptoo.png" alt="Logo Login" class="logo">
+            <form th:action="@{/login}" method="POST">
+                <input type="hidden" name="_csrf" th:value="${_csrf.token}"> <!-- Token CSRF gerado pelo Thymeleaf -->
+                <input type="text" class="nome" name="username" placeholder="Username" required>
+                <input type="password" class="senha" name="password" placeholder="Password" required>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="showPassword">
+                    <label for="showPassword">Show Password</label>
+                    <p><a href="#">Forget password? </a></p>
+                </div>
+                </br>
+                <button>Login</button></br>
+                <p>Don't have an account?<a href=""> Sign up</a> </p>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>

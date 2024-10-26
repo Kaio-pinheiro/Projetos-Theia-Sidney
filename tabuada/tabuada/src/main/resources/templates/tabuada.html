@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Tabuada</title>
+    </head>
+    <body>
+        <h1>Tabuada</h1>
+        <!-- Formulário para enviar o número para o servidor -->
+        <form action="/tabuada" method="get">
+            <label for="numero">Digite um número:</label>
+            <!-- para digitar o número a ser calculado na tabuada -->
+            <input type="number" id="numero" name="numero" required>
+            <!-- Botão para enviar o formulário -->
+            <button type="submit">Calcular</button>
+        </form>
+
+        <div>
+            <h2>Resultado:</h2>
+            <ul>
+                <!-- Tive que pesquisar sobre está parte -->
+                <!-- Lista onde cada 'item' é um resultado da 'tabuada' -->
+                <!-- th:each itera sobre a lista 'tabuada' e cria um <li> para cada item -->
+                 <li th:each="linha : ${tabuada}" th:text="${linha}"></li>
+            </ul>
+            
+        </div>
+    </body>
+</html>
